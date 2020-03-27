@@ -27,7 +27,10 @@ dependencies:
   page_transition: ^1.1.5
   flare_flutter: ^2.0.1
   flutter_visualizers: ^0.0.2
-  
+  audio_recorder:
+  file:
+  path_provider:
+  permission_handler:    
   http: ^0.12.0+4
   get_it: ^1.0.3
   provider: ^2.0.1

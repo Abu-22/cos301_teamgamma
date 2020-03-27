@@ -25,12 +25,14 @@ class _ChooseModeState extends State<ChooseModeView> {
               volumeSection,
               volumeCaptionSection,
               volumeButtonSection(context, model),
+              
               imageSection,
               formantSection,
               formantCaptionSection,
               formantButtonSection(context, model),
             ],
           ),
+          
         ),
     );
   }
@@ -81,6 +83,7 @@ Widget volumeButtonSection(BuildContext context, model) {
       children: [
         new RawMaterialButton(
           onPressed: () async {
+            model.setVolumeBased();
             Navigator.pushNamed(context, '/');
             /* var modeSuccessfullySet = await model.setUserMode("Volume");
             if(modeSuccessfullySet){
@@ -92,8 +95,8 @@ Widget volumeButtonSection(BuildContext context, model) {
             height: 65,
             width: 65,
             child: new Icon(
-              Icons.mic_none,
-              color: Color(0xff61A3EE),
+              Icons.volume_up,
+              color: Color(int.parse(model.modeIconColorVol)),
               size: 35.0,
             ),
             decoration: BoxDecoration(
@@ -152,6 +155,8 @@ Widget formantButtonSection(BuildContext context, model) {
       children: [
         new RawMaterialButton(
           onPressed: () async {
+            model.setFormantBased();
+            
             Navigator.pushNamed(context, '/');
             /* var modeSuccessfullySet = await model.setUserMode("formant");
             if(modeSuccessfullySet){
@@ -164,7 +169,7 @@ Widget formantButtonSection(BuildContext context, model) {
             width: 65,
             child: new Icon(
               Icons.mic_none,
-              color: Color(0xff303030),
+              color: Color(int.parse(model.modeIconColorFor)),
               size: 35.0,
             ),
             decoration: BoxDecoration(
